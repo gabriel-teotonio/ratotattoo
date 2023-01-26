@@ -250,6 +250,15 @@ a {
 .header nav ul li:hover {
   color: var(--color-silver);
 }
+.header .btn-menu {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.header .btn-menu span {
+  font-size: 2rem;
+}
 
 .scrolled {
   background-color: rgba(86, 86, 86, 0.247);
@@ -258,8 +267,35 @@ a {
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
   .header nav {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: rgb(78, 78, 78);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    height: 100vh;
+    z-index: 500;
+    transition: 0.3s all ease-in-out;
+  }
+  .header nav ul {
+    flex-direction: column;
+  }
+  .header nav.active {
+    width: 60%;
+    opacity: 1;
+    pointer-events: inherit;
+  }
+  .header .btn-menu {
+    display: block;
   }
 }
 :root {

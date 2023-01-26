@@ -24,6 +24,16 @@
             }
         }
     }
+    .btn-menu{
+        display: none;
+        background-color: transparent;
+        border: none;
+        color: white;
+
+        span{
+            font-size: 2rem;
+        }
+    }
 }
 
 .scrolled{
@@ -33,8 +43,33 @@
 
 @media (max-width:768px) {
     .header{
+        padding: 1rem;
         nav{
-            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            align-items: flex-start;
+            padding: 1rem;
+            background-color: rgb(78, 78, 78);
+            flex-direction: column;
+            justify-content: space-between;
+            width: 0;
+            opacity: 0;
+            pointer-events: none;
+            height: 100vh;
+            z-index: 500;
+            transition: .3s all ease-in-out;
+            ul{
+                flex-direction: column;
+            }
+            &.active{
+                width: 60%;
+                opacity: 1;
+                pointer-events: inherit;
+            }
+        }
+        .btn-menu{
+            display: block;
         }
     }
 }
