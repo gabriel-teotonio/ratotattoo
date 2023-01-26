@@ -1,0 +1,40 @@
+
+.header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 6rem;
+    z-index: 500;
+    background-color: transparent;
+    transition: .3s all ease-in-out;
+    nav{
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        ul{
+            display: flex;
+            gap: 1rem;
+            li{
+                font-weight: var(--font-semiBold);
+                &:hover{
+                    color: var(--color-silver);
+                }
+            }
+        }
+    }
+}
+
+.scrolled{
+    background-color: rgba(86, 86, 86, 0.247);
+    backdrop-filter: blur(.5rem);
+}
+
+@media (max-width:768px) {
+    .header{
+        nav{
+            display: none;
+        }
+    }
+}
